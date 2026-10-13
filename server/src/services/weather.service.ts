@@ -76,6 +76,7 @@ export interface HourlyData {
     dateTime: string;
     temp: number;
     icon: string;
+    description: string;
 }
 
 export interface DailyForecast {
@@ -154,7 +155,12 @@ export async function getFiveDayForecast(lat: number, lon: number): Promise<Dail
             continue;
         }
 
-        const hourlyData = { dateTime, temp: temperature, icon: condition.icon };
+        const hourlyData = {
+            dateTime,
+            temp: temperature,
+            icon: condition.icon,
+            description: condition.description
+        };
         const existingDay = days.get(date);
         if (existingDay) {
             existingDay.minTemp = Math.min(existingDay.minTemp, temperature);
