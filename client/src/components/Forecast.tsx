@@ -42,7 +42,7 @@ function Forecast({ forecast, selectedDay, unitSystem, onDaySelect }: ForecastPr
                 />
                 <span>{hour.dateTime}</span>
                 <span>{formatTemperature(hour.temp, unitSystem)}</span>
-                <span>{selectedDay.weatherCondition.description}</span>
+                <span>{hour.description}</span>
               </div>
             ))}
           </div>

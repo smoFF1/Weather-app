@@ -41,6 +41,7 @@ export interface HourlyData {
   dateTime: string;
   temp: number;
   icon: string;
+  description: string;
 }
 
 export interface DailyForecast {
